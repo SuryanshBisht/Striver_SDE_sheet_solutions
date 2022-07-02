@@ -1,3 +1,11 @@
+Some thoughts about the hare and tortoise algo (used to find loops in linked lists):- 
+if we have two particles one goes with v and the other goes with 2v constant velocities
+if they're in straight lines, then they'll never meet, 
+but if they're in a loop, they'll always meet regardless of their starting points. 
+In the worst case, they'll meet after wandering through all the loop
+
+
+
 warning: LF will be replaced by CRLF in README.md.
 The file will have its original line endings in your working directory
 
