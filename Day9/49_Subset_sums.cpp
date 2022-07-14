@@ -1,26 +1,20 @@
 // https://practice.geeksforgeeks.org/problems/subset-sums2234/1
 class Solution {
-    vector<vector<int>> ans;
-    vector<int> v;
+    vector<int> ans;
 public:
-    void subsets(vector<int> &nums, int ind){
-        if(ind == nums.size()){
-            ans.push_back(v);
+    void sums(vector<int> &v, int sum, int ind){
+        if(ind == v.size()){
+            ans.push_back(sum);
             return;
         }
-           
-        int i = ind;
-        while(ind < nums.size() && nums[i] == nums[ind]) ind++;
-        subsets(nums, ind);
-        v.push_back(nums[i]);
-        subsets(nums, i + 1);
-        v.pop_back();
+        sums(v, sum, ind + 1);
+        sums(v, sum + v[ind], ind + 1);
     }
     
-    vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+    vector<int> subsetSums(vector<int> arr, int N)
+    {
         ans.clear();
-        sort(nums.begin(), nums.end());
-        subsets(nums, 0);
+        sums(arr, 0, 0);
         return ans;
     }
 };
