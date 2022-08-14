@@ -7,6 +7,9 @@
 *.o
 *.obj
 
+#personal files
+personal
+
 #cph files
 .cph
 .prob
